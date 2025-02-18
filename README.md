@@ -1,70 +1,107 @@
-# Getting Started with Create React App
+# Website Entity & Intent Analyzer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 📌 Overview
+This project is an AI-powered tool that analyzes web pages to extract **named entities** (brands, products, locations) and determine **search intent** (Informational, Transactional, Navigational, Commercial). It uses:
 
-## Available Scripts
+✅ **Flask** (Backend) – API for scraping & AI analysis  
+✅ **Playwright** – Scrapes webpage content  
+✅ **Google Gemini AI** – Extracts entities & intent  
+✅ **React** (Frontend) – User interface  
+✅ **Axios** – Fetches API results  
+✅ **CORS** – Enables cross-origin requests  
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 📂 Project Structure
+```
+projectreact/
+│── app.py              # Flask Backend (API)
+│── requirements.txt    # Python Dependencies
+│── frontend/           # React Frontend
+│   ├── src/
+│   ├── public/
+│   ├── package.json
+│── README.md           # Documentation
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🚀 Setup Instructions
 
-### `npm test`
+### 1️⃣ **Backend (Flask API)**
+#### **Install Dependencies**
+Run the following commands in **Command Prompt (cmd)**:
+```sh
+cd C:\Users\Lenovo\Desktop\project\react1
+pip install -r requirements.txt
+playwright install
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### **Run Flask API**
+```sh
+python app.py
+```
+✅ Flask will start at `http://127.0.0.1:5000/`
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 2️⃣ **Frontend (React UI)**
+#### **Install Dependencies**
+```sh
+cd frontend
+npm install
+```
+#### **Run React Frontend**
+```sh
+npm start
+```
+✅ React will run at `http://localhost:3000/`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🛠 How to Use
+1️⃣ Open the **React App** in your browser:  
+   **`http://localhost:3000/`**  
+2️⃣ Enter a **website URL** (e.g., `https://example.com`) and click **Analyze**  
+3️⃣ The app will scrape the page and display:  
+   - **Title, Meta Description, Headings**  
+   - **Extracted Named Entities (Brands, Locations, Products)**  
+   - **Search Intent Analysis**
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 📝 Example API Response
+```json
+{
+    "scraped_data": {
+        "title": "Create a Blog - Squarespace",
+        "meta_description": "Create a blog and manage content on Squarespace...",
+        "headings": ["Create a blog", "Publish faster", "Sell premium content"]
+    },
+    "analysis": "\n**Named Entities:**\n\n**Brands:** Squarespace\n**Products:** Website plans, Blogs\n**Search Intent:** Informational"
+}
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## ❓ Troubleshooting
+### 🔹 **Backend Not Found (404 Error)?**
+✔️ Ensure Flask is running with `python app.py`  
+✔️ Try testing API manually using **Postman**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 🔹 **React Not Connecting to Flask?**
+✔️ Check if Flask is running on **`http://127.0.0.1:5000/`**  
+✔️ Update `App.js` API URL if Flask runs on a different port
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🌟 Future Enhancements
+🔹 Add database (PostgreSQL) to store analysis history  
+🔹 Improve UI with better visualization (charts & graphs)  
+🔹 Convert to Chrome Extension for easier analysis  
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## 📌 Author
+👨‍💻 Developed by **Shanmugavel B**  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
