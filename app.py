@@ -7,7 +7,7 @@ app = Flask(__name__)
 CORS(app)  # Allow cross-origin requests
 
 # Set your Gemini API Key
-genai.configure(api_key="AIzaSyCSeXUhWFuBM_of2wVnlifn1Poh03_Mxvg")
+genai.configure(api_key="api key")
 
 def scrape_website(url):
     with sync_playwright() as p:
